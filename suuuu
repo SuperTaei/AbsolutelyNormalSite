@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>21억 무료 나눔</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffe600, #ff3d00);
+      text-align: center;
+      color: #111;
+      overflow: hidden;
+    }
+
+    .page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    button {
+      font-size: 32px;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 15px;
+      background: #00ff55;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 20px black;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #hackScreen {
+      display: none;
+      background: black;
+      color: #00ff00;
+      height: 100vh;
+      font-family: monospace;
+      animation: shake 0.1s infinite;
+    }
+
+    .glitch {
+      font-size: 60px;
+      animation: glitch 0.2s infinite;
+      color: red;
+      text-shadow: 3px 3px #00ffff, -3px -3px #ff00ff;
+    }
+
+    .code {
+      font-size: 20px;
+      white-space: pre-line;
+      color: #00ff00;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(2px, 2px); }
+      25% { transform: translate(-2px, 3px); }
+      50% { transform: translate(3px, -2px); }
+      75% { transform: translate(-3px, -3px); }
+      100% { transform: translate(2px, -2px); }
+    }
+
+    @keyframes glitch {
+      0% { transform: skew(0deg); }
+      20% { transform: skew(10deg); }
+      40% { transform: skew(-10deg); }
+      60% { transform: skew(5deg); }
+      80% { transform: skew(-5deg); }
+      100% { transform: skew(0deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="mainPage" class="page">
+    <h1>진짜 사이트 가짜아님<br>21억 무료 나눔 당장 받기</h1>
+    <button onclick="hack()">당장 받기</button>
+  </div>
+
+  <div id="hackScreen" class="page">
+    <h1 class="glitch">넌 해킹 당했다.</h1>
+    <p class="code" id="codeText"></p>
+  </div>
+
+  <script>
+    function hack() {
+      document.getElementById("mainPage").style.display = "none";
+      document.getElementById("hackScreen").style.display = "flex";
+
+      const codeText = document.getElementById("codeText");
+      let lines = [
+        "시스템 접속 중...",
+        "파일 분석 중...",
+        "비밀번호 찾는 중...",
+        "IP 추적 중...",
+        "suuuuuuuuuuuuu",
+        "ERROR ERROR ERROR",
+        "고서준 멍청이",
+        "구나현 바보"
+      ];
+
+      let i = 0;
+      setInterval(() => {
+        codeText.innerText += lines[i % lines.length] + "\n";
+        i++;
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
